@@ -167,8 +167,8 @@ static const Rule rules[] = {
 	RULE(.wintype = WTYPE "UTILITY", .isfloating = 1)
 	RULE(.wintype = WTYPE "TOOLBAR", .isfloating = 1)
 	RULE(.wintype = WTYPE "SPLASH", .isfloating = 1)
-	RULE(.class = "Gimp", .tags = 1 << 4)
-	RULE(.class = "Firefox", .tags = 1 << 7)
+	#RULE(.class = "Gimp", .tags = 1 << 4)
+	#RULE(.class = "Firefox", .tags = 1 << 7)
 };
 
 static const MonitorRule monrules[] = {
@@ -248,6 +248,7 @@ static const char *browsercmd[]  = 		{ "brave", NULL };
 static const char *wallpapercmd[]  = 	{ "nitrogen", NULL };
 static const char *soundcmd[]  = 		{ "pavucontrol", NULL };
 static const char *steamcmd[]  = 		{ "steam", NULL };
+static const char *filebrowsercmd[]  = 		{ "thunar", NULL };
 
 // ONECO
 static const char *nimscmd[]  = 		{ "psuwin", NULL };
@@ -267,7 +268,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_BackSpace,  spawn,                  {.v = browsercmd } },
 	{ MODKEY|ShiftMask,             XK_i,          spawn,                  {.v = wallpapercmd } },
 	{ MODKEY,			            XK_F12,        spawn,                  {.v = soundcmd } },
-	{ MODKEY,                       XK_F11,        spawn,                  {.v = steamcmd } },
+	{ MODKEY,                       XK_Home,        spawn,                  {.v = filebrowsercmd } },
 	//ONECO
 	{ MODKEY,                       XK_F1,          spawn,                  {.v = nimscmd } },
 	{ MODKEY,                       XK_F2,     		spawn,                  {.v = psuwebcmd } },
